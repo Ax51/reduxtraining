@@ -1,0 +1,30 @@
+.app {
+    position: absolute;
+    top: 43%;
+    left: 43%;
+}
+
+.app--counter {
+    margin: 20px 0;
+
+    font-size: 30px;
+    text-align: center;
+}
+
+.app--control-panel--btn {
+    margin: 2px;
+
+    height: 30px;
+    width: 80px;
+
+    border: 2px solid black;
+    border-radius: 20px 5px;
+    background-color: #fff;
+
+}
+.app--control-panel--btn:hover {
+    background-color: rgb(210, 210, 210);
+}
+.app--control-panel--btn:active {
+    background-color: rgb(180, 180, 180);
+}
