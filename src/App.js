@@ -1,37 +1,27 @@
-import React from 'react';
-import './App.css';
+import { connect } from 'react-redux';
+import Counter from './Counter';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            count: 0
-        }
-    }
-
-    add = () => {
-        this.setState({count: this.state.count + 1})
-    }
-    remove = () => {
-        this.setState({count: this.state.count - 1})
-    }
-    render() {
-        return (
-            <div className="app">
-                <div className="app--counter">
-                    {this.state.count}
-                </div>
-                <div className="app--control-panel">
-                    <button
-                        className="app--control-panel--btn"
-                        onClick={this.add}>Вычесть</button>
-                    <button
-                        className="app--control-panel--btn"
-                        onClick={this.remove}>Добавить</button>
-                </div>
-            </div>
-        );
-    }
+function mapStateToProps(state) {
+    return {
+        countValue: state.count
+    };
 }
 
-export default App;
+const increaseAction = { type: "increase" };
+const decreaseAction = { type: "decrease" };
+const resetAction = { type: "reset" };
+
+function mapDispatchToProps(dispatch) {
+    return {
+        increaseCount: () => dispatch(increaseAction),
+        decreaseCount: () => dispatch(decreaseAction),
+        resetCount: () => dispatch(resetAction)
+    };
+}
+
+const connectedComponent = connect(
+    mapStateToProps,
+    mapDispatchToProps
+) (Counter);
+
+export default connectedComponent;
