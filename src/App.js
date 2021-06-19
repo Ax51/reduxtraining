@@ -7,15 +7,12 @@ function mapStateToProps(state) {
     };
 }
 
-const increaseAction = { type: "increase" };
-const decreaseAction = { type: "decrease" };
-const resetAction = { type: "reset" };
-
 function mapDispatchToProps(dispatch) {
     return {
-        increaseCount: () => dispatch(increaseAction),
-        decreaseCount: () => dispatch(decreaseAction),
-        resetCount: () => dispatch(resetAction)
+        increaseCount: () => dispatch({ type: "increase" }),
+        decreaseCount: () => dispatch({ type: "decrease" }),
+        resetCount: () => dispatch({ type: "reset" }),
+        addMillionToCount: () => dispatch({ type: "addMillion" })
     };
 }
 
