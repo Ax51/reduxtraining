@@ -1,5 +1,6 @@
 import React from 'react';
 import './Counter.css';
+import { NavLink } from 'react-router-dom'
 
 class Counter extends React.Component {
     constructor(props) {
@@ -26,6 +27,10 @@ class Counter extends React.Component {
     render() {
         return (
             <div className="app">
+                <div className="app--nav-bar-2">
+                    <NavLink to='/' className='nav-bar--button'>First page</NavLink>
+                    <NavLink to='/secondpage' className='nav-bar--button'>second page</NavLink>
+                </div>
                 <div className="app--counter">
                     {this.props.countValue}
                 </div>

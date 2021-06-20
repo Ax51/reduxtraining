@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Counter from './Counter';
+import ScoreTable from './Score-table';
 
 function mapStateToProps(state) {
     return {
@@ -19,6 +19,6 @@ function mapDispatchToProps(dispatch) {
 const connectedComponent = connect(
     mapStateToProps,
     mapDispatchToProps
- ) (Counter);
+ ) (ScoreTable);
 
 export default connectedComponent;
