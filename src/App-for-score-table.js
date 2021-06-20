@@ -7,18 +7,8 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        increaseCount: () => dispatch({ type: "increase" }),
-        decreaseCount: () => dispatch({ type: "decrease" }),
-        resetCount: () => dispatch({ type: "reset" }),
-        addMillionToCount: () => dispatch({ type: "addMillion" })
-    };
-}
-
 const connectedComponent = connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
  ) (ScoreTable);
 
 export default connectedComponent;
